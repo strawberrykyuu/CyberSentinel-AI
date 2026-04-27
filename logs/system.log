@@ -1,0 +1,42 @@
+[2026-04-06 19:37:27] INFO     orchestrator.main_orchestrator — === Initialising MainOrchestrator ===
+[2026-04-06 19:37:27] INFO     data.simulator — Simulator: Synthetic mode active (CSV not found at /home/claude/seminar_project/data/cybersecurity_logs.csv)
+[2026-04-06 19:37:27] INFO     agents.monitoring_agent — MonitoringAgent initialised.
+[2026-04-06 19:37:27] INFO     models.isolation_forest — IsolationForestDetector created (n_estimators=100, contamination=0.05)
+[2026-04-06 19:37:27] INFO     models.zscore — ZScoreDetector created (window=50, threshold=3.0)
+[2026-04-06 19:37:27] INFO     models.uba — UBADetector created (window=200, max_failed=5, max_ips=3)
+[2026-04-06 19:37:27] INFO     agents.detection_agent — DetectionAgent initialised (fusion weights IF=0.40 Z=0.35 UBA=0.25).
+[2026-04-06 19:37:27] INFO     agents.decision_agent — DecisionAgent initialised.
+[2026-04-06 19:37:27] INFO     models.malware_cv_model — MalwareCVModel ready (heuristic mode)
+[2026-04-06 19:37:27] INFO     agents.malware_agent — MalwareAgent initialised (model ready).
+[2026-04-06 19:37:27] INFO     agents.response_agent — ResponseAgent initialised.
+[2026-04-06 19:37:27] INFO     orchestrator.main_orchestrator — MainOrchestrator ready.
+[2026-04-06 19:37:27] INFO     orchestrator.main_orchestrator — Starting run: 3 batches.
+[2026-04-06 19:37:27] INFO     agents.monitoring_agent — MonitoringAgent: 20 in → 20 forwarded (total: 20/20)
+[2026-04-06 19:37:27] WARNING  models.isolation_forest — IF cold-start: fitting on incoming batch.
+[2026-04-06 19:37:27] INFO     models.isolation_forest — IF model fitted on 20 samples.
+[2026-04-06 19:37:27] INFO     agents.detection_agent — DetectionAgent: 20 events, 3 anomalies (total anomalies: 3).
+[2026-04-06 19:37:27] INFO     agents.decision_agent — File threat detected: 10.0.0.99 | score=1.000 | sev=critical | action=isolate_host
+[2026-04-06 19:37:27] INFO     agents.decision_agent — DecisionAgent: 1 file threats, 19 direct threats.
+[2026-04-06 19:37:27] INFO     agents.malware_agent — Malware analysis [demo] 10.0.0.99 → ransomware (0.98)
+[2026-04-06 19:37:27] INFO     agents.malware_agent — MalwareAgent: 1 analysed, 1 malware confirmed (cumulative: 1/1).
+[2026-04-06 19:37:27] ERROR    agents.response_agent — ISOLATE: 10.0.0.99 | user=user_019 | malware=ransomware
+[2026-04-06 19:37:27] ERROR    agents.response_agent — ISOLATE: 203.0.113.5 | user=user_007 | malware=None
+[2026-04-06 19:37:27] INFO     agents.response_agent — ResponseAgent: 20 events processed, 2 blocked.
+[2026-04-06 19:37:27] INFO     agents.monitoring_agent — MonitoringAgent: 20 in → 20 forwarded (total: 40/40)
+[2026-04-06 19:37:27] INFO     agents.detection_agent — DetectionAgent: 20 events, 2 anomalies (total anomalies: 5).
+[2026-04-06 19:37:27] INFO     agents.decision_agent — DecisionAgent: 0 file threats, 20 direct threats.
+[2026-04-06 19:37:27] ERROR    agents.response_agent — ISOLATE: 203.0.113.5 | user=user_020 | malware=None
+[2026-04-06 19:37:27] ERROR    agents.response_agent — ISOLATE: 203.0.113.5 | user=user_005 | malware=None
+[2026-04-06 19:37:27] INFO     agents.response_agent — ResponseAgent: 20 events processed, 2 blocked.
+[2026-04-06 19:37:27] INFO     agents.monitoring_agent — MonitoringAgent: 20 in → 20 forwarded (total: 60/60)
+[2026-04-06 19:37:28] INFO     models.isolation_forest — IF model fitted on 60 samples.
+[2026-04-06 19:37:28] INFO     agents.detection_agent — IF model warm-up complete (60 events).
+[2026-04-06 19:37:28] INFO     agents.detection_agent — DetectionAgent: 20 events, 2 anomalies (total anomalies: 7).
+[2026-04-06 19:37:28] INFO     agents.decision_agent — File threat detected: 172.16.0.200 | score=1.000 | sev=critical | action=isolate_host
+[2026-04-06 19:37:28] INFO     agents.decision_agent — DecisionAgent: 1 file threats, 19 direct threats.
+[2026-04-06 19:37:28] INFO     agents.malware_agent — Malware analysis [demo] 172.16.0.200 → ransomware (0.98)
+[2026-04-06 19:37:28] INFO     agents.malware_agent — MalwareAgent: 1 analysed, 1 malware confirmed (cumulative: 2/2).
+[2026-04-06 19:37:28] ERROR    agents.response_agent — ISOLATE: 172.16.0.200 | user=user_013 | malware=ransomware
+[2026-04-06 19:37:28] ERROR    agents.response_agent — ISOLATE: 203.0.113.5 | user=user_029 | malware=None
+[2026-04-06 19:37:28] INFO     agents.response_agent — ResponseAgent: 20 events processed, 2 blocked.
+[2026-04-06 19:37:28] INFO     orchestrator.main_orchestrator — Run complete. Total events: 60.
