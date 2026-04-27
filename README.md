@@ -366,4 +366,4 @@ Log file (`logs/system.log`):
 
 ## 👤 Authors
 
-Seminar project — Agentic AI Systems in Cybersecurity.
+Gaurika Nawani 
